@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drone: <http://www.dronetology.net/dronetology-sdh.owl#>
+
+SELECT (sum(?lat) as ?LAT) (sum(?lon) as ?LON)  ( xsd:float(count(?sensor)) as ?N)
+WHERE
+{
+?sensor a drone:Sensor.
+    ?sensor drone:hasLatitude ?lat.
+    ?sensor drone:hasLongitude ?lon.
+  MINUS
+    {
+        ?f a drone:Flight.
+        ?f drone:hasFlightID ?number.
+        ?f drone:isFlightOf ?log.     
+        ?log drone:hasSensor ?sensor.
+        FILTER ( ?number = 1).
+    }
+}
