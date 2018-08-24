@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.dronetology.net/dronetology-sdh.owl#"
+     xml:base="http://www.dronetology.net/dronetology-sdh.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.dronetology.net/dronetology-sdh.owl">
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dronetology-sdh, the Drone Sensor Data Harvesting Ontology</dc:title>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jesus Villadangos</dc:contributor>
+        <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></dc:rights>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alberto Cordoba</dc:contributor>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jose Javier Astrain</dc:contributor>
+        <dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The objetive of the ontology is to define best drone tour for sensor data harvesting</dc:subject>
+        <dc:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The objetive of the ontology is to define best drone tour for sensor data harvesting</dc:abstract>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Martín Lammerding</dc:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasDistance -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasDistance">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isDistanceOfSensor"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasDrone -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasDrone">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isDroneOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Drone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlight -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlight">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isFlightOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlightPathVector -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlightPathVector">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isFlightPathVectorOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlightPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlightPlan">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isFlightPlanOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlyingConditions -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlyingConditions">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isFlyingConditionsOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasOriginalWaypoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasOriginalWaypoint">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#WaypointSensor"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasPath -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasPath">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isPathOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasSensor">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isSensorOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWaypoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWaypoint">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isWaypointOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWaypointAtBegin -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWaypointAtBegin">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtBeginOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWaypointAtEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWaypointAtEnd">
+        <owl:inverseOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtEndOf"/>
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isDistanceOfSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isDistanceOfSensor">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isDroneOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isDroneOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Drone"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isFlightOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isFlightOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isFlightPathVectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isFlightPathVectorOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isFlightPlanOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isFlightPlanOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isFlyingConditionsOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isFlyingConditionsOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isPathOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isPathOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isSensorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isSensorOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtBeginOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtBeginOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtEndOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isWaypointAtEndOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isWaypointOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isWaypointOf">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <rdfs:range rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasDistanceToWaypoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasDistanceToWaypoint">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasEventTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasEventTime">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFPID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFPID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlanTimeLog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlightID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlightID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlightPathVectorBearing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlightPathVectorBearing">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasFlightPlanID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasFlightPlanID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasInflightAnalysis -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasInflightAnalysis">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasLatitude">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasLongitude">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasOrder">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasSensorBearingFromWaypoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasSensorBearingFromWaypoint">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasSensorID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasSensorID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasSize">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWPID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWPID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlanTimeLog"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWaypointID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWaypointID">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#hasWindSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#hasWindSpeed">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isFarAway -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isFarAway">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#isLinked -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dronetology.net/dronetology-sdh.owl#isLinked">
+        <rdfs:domain rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Arrived -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Arrived">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlanTimeLog"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Component -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Component"/>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Drone -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Drone"/>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#End -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#End">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Home"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Event -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Event">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Flight -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#FlightPathVector">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#FlightPlan -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#FlightPlanTimeLog -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#FlightPlanTimeLog">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#HardwareComponent -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#HardwareComponent">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Home -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Home">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Arrived"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#MissionElement -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#OnboardSensor -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#OnboardSensor">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Sensor -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#HardwareComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#SensorDistance -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Start -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Start">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Home"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#Waypoint -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#Waypoint">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#MissionElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#WaypointSensor -->
+
+    <owl:Class rdf:about="http://www.dronetology.net/dronetology-sdh.owl#WaypointSensor">
+        <rdfs:subClassOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#conditions_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#conditions_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlyingConditions"/>
+        <hasWindSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</hasWindSpeed>
+    </owl:NamedIndividual>
+    
+
+ 
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#drone_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#drone_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Drone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- deleted http://www.dronetology.net/dronetology-sdh.owl#droneflight_1 -->   
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#droneflight_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#droneflight_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <hasDrone rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#drone_1"/>
+        <hasFlightPlan rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#flight_1"/>
+        <hasFlyingConditions rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#conditions_1"/>
+        <hasFlightID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasFlightID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#end_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#end_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#End"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</hasEventTime>
+        <hasFPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFPID>
+        <hasWPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWPID>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#flight_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#flight_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <hasFlightPlanID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasFlightPlanID>
+        <hasInflightAnalysis rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sensor-waypoint</hasInflightAnalysis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#flight_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#flight_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <hasFlightPlanID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasFlightPlanID>
+        <hasInflightAnalysis rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bearing-ordered</hasInflightAnalysis>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#flight_basic -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#flight_basic">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <hasFlightPlanID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</hasFlightPlanID>
+        <hasInflightAnalysis rdf:datatype="http://www.w3.org/2001/XMLSchema#string">none</hasInflightAnalysis>
+    </owl:NamedIndividual>
+    
+     
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#start_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#start_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Start"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasEventTime>
+        <hasFPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFPID>
+        <hasWPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWPID>
+    </owl:NamedIndividual>
+    
+
+
+        
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#waypoint_log_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#waypoint_log_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Arrived"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</hasEventTime>
+        <hasFPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFPID>
+        <hasWPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasWPID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#waypoint_log_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#waypoint_log_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Arrived"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</hasEventTime>
+        <hasFPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFPID>
+        <hasWPID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasWPID>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

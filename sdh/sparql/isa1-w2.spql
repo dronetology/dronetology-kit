@@ -1,0 +1,49 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drone: <http://www.dronetology.net/dronetology-sdh.owl#>
+
+SELECT ?W ( (if( (?sensor_associated-?sensor_recollected=0) || ?sensor_associated=0 , "avoid" , "continue") ) as ?result) ?sensor_recollected ?sensor_associated
+WHERE
+{
+    {
+        SELECT (?wid as ?W)
+        WHERE
+        {
+            ?w drone:hasWaypointID ?wid.
+            ?w drone:hasLatitude ?lat.
+            ?w drone:hasLongitude ?lon.
+        FILTER (?wid=2).
+        }
+    }
+    {
+        SELECT  (count(DISTINCT ?sid) as ?sensor_recollected)
+        WHERE 
+        {
+        ?f a drone:Flight.
+        ?f drone:hasFlightID ?number.
+        ?f drone:isFlightOf ?log.
+        ?log drone:hasSensor ?s.
+        ?s drone:hasDistance ?distance.
+        ?distance drone:isLinked ?linked.
+        ?distance drone:hasWaypoint ?w.
+        ?s drone:hasSensorID ?sid.
+        ?w drone:hasWaypointID ?wid.
+        FILTER ( ?number=1 && ?wid=2 && ?linked=true).
+        }
+    }
+    {
+        SELECT  (count(DISTINCT ?sid) as ?sensor_associated)  
+        WHERE 
+        {
+        ?w a drone:Waypoint.
+        ?w drone:hasWaypointID ?wid.
+        ?w drone:isWaypointOf ?distance.
+        ?distance drone:isLinked ?linked.
+        ?distance drone:isDistanceOfSensor ?s.
+        ?s drone:hasSensorID ?sid.
+        FILTER ( ?wid=2 && ?linked=true).
+        }
+    }
+}

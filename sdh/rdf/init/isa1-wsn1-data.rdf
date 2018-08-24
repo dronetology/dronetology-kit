@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
+    <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.dronetology.net/dronetology-sdh.owl#"
+     xml:base="http://www.dronetology.net/dronetology-sdh.owl"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+
+<owl:Ontology rdf:about="http://www.dronetology.net/dronetology-sdh.owl"/> 
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#flight_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#flight_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPlan"/>
+        <hasFlightPathVector rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#segment_1_1"/>
+        <hasFlightPathVector rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#segment_1_2"/>
+        <hasFlightPathVector rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#segment_1_3"/>       
+        <hasFlightPlanID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFlightPlanID>
+        <hasInflightAnalysis rdf:datatype="http://www.w3.org/2001/XMLSchema#string">avoided-waypoint</hasInflightAnalysis>
+    </owl:NamedIndividual>    
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#home -HOME..42.8305481, -1.730344-->
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#home">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_1"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_2"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_3"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_4"/>
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305481</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730344</hasLongitude>
+        <hasWaypointID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWaypointID>
+    </owl:NamedIndividual>
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#waypoint_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>      
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_1"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_2"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_3"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_4"/>
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305484</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730344</hasLongitude>
+        <hasWaypointID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasWaypointID>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#waypoint_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Waypoint"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_1"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_2"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_3"/>
+        <isWaypointOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_4"/>
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305482</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730344</hasLongitude>
+        <hasWaypointID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasWaypointID>
+    </owl:NamedIndividual>
+    
+  <!--.................................................segment ......................-->
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#segment_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#segment_1_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathSegment"/>
+        <hasOrder rdf:datatype="&xsd;int">1</hasOrder>
+        <hasSize rdf:datatype="&xsd;float">15.0</hasSize>
+        <hasSegmentBearing rdf:datatype="&xsd;float">32.0</hasSegmentBearing>
+        <isFlightPathSegmentOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#flight_1"/>
+        <hasWaypointAtBegin rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+        <hasWaypointAtEnd rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+    </owl:NamedIndividual>   
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#segment_1_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#segment_1_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathSegment"/>
+        <hasOrder rdf:datatype="&xsd;int">2</hasOrder>
+        <hasSegmentBearing rdf:datatype="&xsd;float">45.0</hasSegmentBearing>
+        <hasSize rdf:datatype="&xsd;float">9.0</hasSize>
+        <isFlightPathSegmentOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#flight_1"/>
+        <hasWaypointAtBegin rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+        <hasWaypointAtEnd rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#segment_1_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#segment_1_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#FlightPathSegment"/>
+        <hasSegmentBearing rdf:datatype="&xsd;float">234.0</hasSegmentBearing>
+        <hasOrder rdf:datatype="&xsd;int">4</hasOrder>
+        <hasSize rdf:datatype="&xsd;float">555.0</hasSize>
+        <isFlightPathSegmentOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#flight_1"/>
+        <hasWaypointAtBegin rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+        <hasWaypointAtEnd rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+    </owl:NamedIndividual>  
+
+<!-- http://www.dronetology.net/dronetology-sdh.owl#sensor_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensor_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_1"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_1"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_1"/>   
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305483</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730324</hasLongitude>
+        <hasSensorID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasSensorID>       
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensor_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensor_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_2"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_2"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_2"/>  
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305482</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730324</hasLongitude>
+        <hasSensorID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasSensorID>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensor_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensor_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_3"/>  
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_3"/>  
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_3"/>  
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.8305481</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.730324</hasLongitude>
+        <hasSensorID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasSensorID>
+    </owl:NamedIndividual>
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensor_4 42.829857, -1.743080 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensor_4">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Sensor"/>
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_0_4"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_1_4"/> 
+        <hasDistance rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#distance_2_4"/>  
+        <hasLatitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.829857</hasLatitude>
+        <hasLongitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.743080</hasLongitude>
+        <hasSensorID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasSensorID>
+    </owl:NamedIndividual>
+
+
+
+<!--para sensor 1-->
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_0_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_0_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_1"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_1_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_1"/>
+        <hasSensorBearingFromWaypoint rdf:datatype="http://www.w3.org/2001/XMLSchema#float">98.0</hasSensorBearingFromWaypoint>        
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isLinked>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_2_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_1"/>
+        <hasSensorBearingFromWaypoint rdf:datatype="http://www.w3.org/2001/XMLSchema#float">98.0</hasSensorBearingFromWaypoint>        
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+
+<!--para sensor 2-->
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_0_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_0_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_2"/>
+        <hasSensorBearingFromWaypoint rdf:datatype="http://www.w3.org/2001/XMLSchema#float">333.0</hasSensorBearingFromWaypoint>        
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>  
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_1_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_1_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_2"/>
+        <hasSensorBearingFromWaypoint rdf:datatype="http://www.w3.org/2001/XMLSchema#float">333.0</hasSensorBearingFromWaypoint>        
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isLinked>
+    </owl:NamedIndividual>  
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_2_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_2_2">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_2"/>
+        <hasSensorBearingFromWaypoint rdf:datatype="http://www.w3.org/2001/XMLSchema#float">223.0</hasSensorBearingFromWaypoint>        
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+    
+
+<!--para sensor 3-->
+
+ <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_0_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_0_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_3"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_1_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_1_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_3"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isLinked>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_2_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_2_3">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_3"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+<!--para sensor 4-->
+
+ <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_0_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_0_4">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#home"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_4"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_1_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_1_4">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_1"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_4"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isLinked>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#distance_2_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#distance_2_4">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorDistance"/>
+        <hasWaypoint rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#waypoint_2"/>
+        <isDistanceOfSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_4"/>
+        <isLinked rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isLinked>
+    </owl:NamedIndividual>
+
+    <!--.......................................sensor log.........................................-->
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensorLog_1_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensorLog_1_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <hasFlight rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#droneflight_1"/>        
+        <hasSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_1"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</hasEventTime>        
+    </owl:NamedIndividual>       
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensorLog_2_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensorLog_2_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <hasFlight rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#droneflight_1"/>        
+        <hasSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_2"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</hasEventTime>        
+    </owl:NamedIndividual>      
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensorLog_3_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensorLog_3_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <hasFlight rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#droneflight_1"/>       
+        <hasSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_3"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3767</hasEventTime>       
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.dronetology.net/dronetology-sdh.owl#sensorLog_4_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#sensorLog_4_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#SensorFlightPlanLog"/>
+        <hasFlight rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#droneflight_1"/>       
+        <hasSensor rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensor_4"/>
+        <hasEventTime rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3333</hasEventTime>       
+    </owl:NamedIndividual>
+
+
+
+<!--harvested sensors.....isFlightOf rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#sensorLog_X_1"/-->
+
+    <owl:NamedIndividual rdf:about="http://www.dronetology.net/dronetology-sdh.owl#droneflight_1">
+        <rdf:type rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#Flight"/>
+        <hasDrone rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#drone_1"/>
+        <hasFlightPlan rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#flight_1"/>
+        <hasFlyingConditions rdf:resource="http://www.dronetology.net/dronetology-sdh.owl#conditions_1"/>                             
+        <!--{--><!--}-->
+        <hasFlightID rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasFlightID>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
